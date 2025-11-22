@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- 
+    - meta  tags
+    -->
+    <title>GaweCV - A software engineer portfolio</title>
+    <meta name="title" content="GaweCV - A software engineer portfolio" />
+    <meta
+      name="description"
+      content="This is a personal portfolio made by codewithsadee"
+    />
+
+    <!-- 
+    - favicon
+    -->
+    <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml" />
+
+    <!-- 
+    - google font link
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500&family=Open+Sans:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- 
+    - material icon link
+    -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+
+    <!-- 
+    - custom css link
+    -->
+
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <!-- 
+    - SIDEBAR
+    -->
+    <div class="sidebar">
+      <ul>
+        <li>
+          <a href="#" class="logo">
+            <span class="material-symbols-outlined">code_blocks</span>
+            <span>GAWECV</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="sidebar-link">
+            <span class="material-symbols-outlined">overview</span>
+            <span class="body-large">Overview</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="sidebar-link">
+            <span class="material-symbols-outlined">data_info_alert</span>
+            <span class="body-large">General & About</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="sidebar-link">
+            <span class="material-symbols-outlined">school</span>
+            <span class="body-large">Educations</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="sidebar-link">
+            <span class="material-symbols-outlined">work_history</span>
+            <span class="body-large">Experiences</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="#" class="sidebar-link">
+            <span class="material-symbols-outlined">psychology</span>
+            <span class="body-large">Skills</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="#" class="sidebar-link">
+            <span class="material-symbols-outlined">logout</span>
+            <span class="body-large">Logout</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- 
+    - #TOP BAR
+    -->
+
+    <header class="topbar">
+      <a href="#" class="logo">
+        <img
+          src="./assets/images/Logo_dark.png"
+          alt="GaweCV"
+          width="115"
+          height="26"
+          class="dark"
+        />
+        <img
+          src="./assets/images/Logo_light.png"
+          alt="GaweCV"
+          width="115"
+          height="26"
+          class="light"
+        />
+      </a>
+
+      <button class="icon-btn theme-btn" data-theme-btn>
+        <span class="material-symbols-outlined dark" aria-hidden="true">
+          dark_mode
+        </span>
+
+        <span class="material-symbols-outlined light" aria-hidden="true">
+          light_mode
+        </span>
+        <div class="state-layer"></div>
+      </button>
+    </header>
+
+    <main>
+      <article>
+        <!-- 
+            - #HERO
+            -->
+
+        <section class="section hero">
+          <div class="container">
+            <figure
+              class="hero-banner img-holder"
+              style="--width: 240; --height: 240"
+            >
+              <img
+                src="./assets/images/profile-user.jpg"
+                height="240"
+                alt="Ahmed Khalid"
+                class="img-cover"
+              />
+            </figure>
+
+            <div class="hero-content">
+              <span class="label-large section-subtitle">Akuntansi</span>
+
+              <h1 class="display-small">Budiono Siregar</h1>
+
+              <p class="body-large section-text">
+                Jl. Tirtayasa Raya RT.004/RW.005 Kel. Deli Serdang Kec. Deli
+                Serdang Kota Deli Serdang 33019
+              </p>
+
+              <div class="btn-wrapper">
+                <a href="mailto:khalid@techgulf.com" class="chip">
+                  <span class="material-symbols-outlined" aria-hidden="true">
+                    mail
+                  </span>
+
+                  <span class="label-large">khalid@techgulf.com</span>
+
+                  <div class="state-layer"></div>
+                </a>
+
+                <a href="tel:+213908539206" class="chip">
+                  <span class="material-symbols-outlined" aria-hidden="true">
+                    call
+                  </span>
+
+                  <span class="label-large">+213908539206</span>
+
+                  <div class="state-layer"></div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 
+        - #MAIN CONTENT
+        -->
+
+        <div class="article">
+          <div class="about-card">
+            <h2 class="card-title title-medium">About</h2>
+
+            <p class="body-medium card-text">
+              Lulusan sarjana program studi Akuntansi di Sekolah Tinggi Ilmu
+              Ekonomi Deli Serdang Aceh dengan IPK 3.67. Senang belajar hal baru
+              dan berorientasi pada detail serta memiliki latar belakang
+              pengalaman kerja di berbagai sektor yang mendukung administratif
+              dan pelayanan.
+            </p>
+
+            <ul class="about-list">
+              <li class="list-item">
+                <span class="material-symbols-outlined" aria-hidden="true">
+                  location_on
+                </span>
+                <span class="label-medium">Deli Serdang, Aceh</span>
+              </li>
+
+              <li class="list-item">
+                <span class="material-symbols-outlined" aria-hidden="true">
+                  work
+                </span>
+                <span class="label-medium">D3 Akuntansi</span>
+              </li>
+
+              <li class="list-item">
+                <span class="material-symbols-outlined" aria-hidden="true">
+                  captive_portal
+                </span>
+                <a href="https://example.com" class="label-medium"
+                  >https://example.com</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <!-- 
+            - #PRIMARY TABS
+            -->
+
+            <div class="primary-tabs">
+              <button class="tab-btn active" data-tab-btn="education">
+                <span class="tab-text title-small">Education</span>
+
+                <div class="state-layer"></div>
+              </button>
+
+              <button class="tab-btn" data-tab-btn="experience">
+                <span class="tab-text title-small">Experience</span>
+
+                <div class="state-layer"></div>
+              </button>
+
+              <button class="tab-btn" data-tab-btn="skill">
+                <span class="tab-text title-small">Skill</span>
+
+                <div class="state-layer"></div>
+              </button>
+            </div>
+
+            <!-- 
+            - #EDUCATION
+            -->
+
+            <section
+              class="section tab-content education-tab active"
+              data-tab-content="education"
+            >
+              <div class="container">
+                <h2 class="section-title title-small">Education</h2>
+
+                <ul class="list">
+                  <li class="resume-item">
+                    <div class="resume-card">
+                      <p class="body-large">
+                        Certification in Web Development with React.js
+                        (FreeCodeCamp Certification)
+                      </p>
+
+                      <span class="label-medium card-subtitle"
+                        >2015 - 2016</span
+                      >
+                    </div>
+                  </li>
+
+                  <li class="resume-item">
+                    <div class="resume-card">
+                      <p class="body-large">
+                        Relevant Coursework: Data Structures, Algorithms,
+                        Database Management
+                      </p>
+
+                      <span class="label-medium card-subtitle"
+                        >2014 - 2013</span
+                      >
+                    </div>
+                  </li>
+
+                  <li class="resume-item">
+                    <div class="resume-card">
+                      <p class="body-large">
+                        Bachelor of Science in Computer Science, Alexandria
+                        University
+                      </p>
+
+                      <span class="label-medium card-subtitle"
+                        >2010 - 2014</span
+                      >
+                    </div>
+                  </li>
+                </ul>
+
+                <h2 class="section-title title-small">Courses</h2>
+
+                <ul class="list">
+                  <li class="resume-item">
+                    <div class="resume-card">
+                      <p class="body-large">
+                        Kepelatihan Keterampilan Nasional
+                      </p>
+
+                      <span class="label-medium card-subtitle"
+                        >2017 - 2018</span
+                      >
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </section>
+
+            <!-- 
+            - #EXPERIENCE
+            -->
+
+            <section
+              class="section tab-content experience-tab"
+              data-tab-content="experience"
+            >
+              <div class="container">
+                <h2 class="section-title title-small">Experience</h2>
+
+                <ul class="list">
+                  <li class="resume-item">
+                    <div class="resume-card">
+                      <p class="body-large">
+                        Software Engineer, TechGulf Solutions
+                      </p>
+
+                      <span class="label-medium card-subtitle"
+                        >2018 - Present</span
+                      >
+
+                      <span class="body-medium card-text"
+                        >Led the development of a customer management system,
+                        resulting in improved efficiency and streamlined
+                        processes.</span
+                      >
+                    </div>
+                  </li>
+
+                  <li class="resume-item">
+                    <div class="resume-card">
+                      <p class="body-large">
+                        Software Developer Intern, ByteOasis Corporation
+                      </p>
+
+                      <span class="label-medium card-subtitle"
+                        >2016 - 2017</span
+                      >
+
+                      <span class="body-medium card-text"
+                        >Assisted in the development and testing of a mobile
+                        application for internal use</span
+                      >
+                    </div>
+                  </li>
+                </ul>
+
+                <h2 class="section-title title-small">Intership</h2>
+
+                <ul class="list">
+                  <li class="resume-item">
+                    <div class="resume-card">
+                      <p class="body-large">
+                        Certification in Web Development with React.js
+                        (FreeCodeCamp Certification)
+                      </p>
+
+                      <span class="label-medium card-subtitle"
+                        >2015 - 2016</span
+                      >
+                    </div>
+                  </li>
+
+                  <li class="resume-item">
+                    <div class="resume-card">
+                      <p class="body-large">
+                        Relevant Coursework: Data Structures, Algorithms,
+                        Database Management
+                      </p>
+
+                      <span class="label-medium card-subtitle"
+                        >2014 - 2013</span
+                      >
+                    </div>
+                  </li>
+
+                  <li class="resume-item">
+                    <div class="resume-card">
+                      <p class="body-large">
+                        Bachelor of Science in Computer Science, Alexandria
+                        University
+                      </p>
+
+                      <span class="label-medium card-subtitle"
+                        >2010 - 2014</span
+                      >
+                    </div>
+                  </li>
+                </ul>
+
+                <h2 class="section-title title-small">Organization</h2>
+
+                <ul class="list">
+                  <li class="resume-item">
+                    <div class="resume-card">
+                      <p class="body-large">
+                        Badan Eksekutif Mahasiswa, Alexandria University
+                      </p>
+
+                      <span class="label-medium card-subtitle"
+                        >2010 - 2014</span
+                      >
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </section>
+
+            <!-- 
+            - #SKILL
+            -->
+
+            <section
+              class="section tab-content skill-tab"
+              data-tab-content="skill"
+            >
+              <div class="container">
+                <ul class="list">
+                  <li class="resume-item">
+                    <div class="resume-card">
+                      <h2 class="section-title title-small">Soft Skill</h2>
+
+                      <span class="body-medium card-text"
+                        >Administrasi, kepemimpinan, keterampilan negosiasi dan
+                        persuasif, kemampuan komunikasi dan interpersonal,
+                        manajemen waktu, kerja individu maupun kerja sama
+                        tim.</span
+                      >
+                    </div>
+                  </li>
+
+                  <li class="resume-item">
+                    <div class="resume-card">
+                      <h2 class="section-title title-small">Hard Skill</h2>
+
+                      <span class="body-medium card-text"
+                        >Mengoperasikan Microsoft Office, email dan SPSS.</span
+                      >
+                    </div>
+                  </li>
+
+                  <li class="resume-item">
+                    <div class="resume-card">
+                      <h2 class="section-title title-small">Bahasa</h2>
+
+                      <span class="body-medium card-text">Inggris</span>
+                      <span class="body-medium card-text">Indonesia</span>
+                    </div>
+                  </li>
+                </ul>
+
+                <div class="contact-info">
+                  <h4 class="section-title title-small">Contact Info</h4>
+
+                  <ul class="contact-info-list">
+                    <li class="contact-info-item">
+                      <div class="icon-box">
+                        <span
+                          class="material-symbols-outlined"
+                          aria-hidden="true"
+                        >
+                          mail
+                        </span>
+                      </div>
+
+                      <div class="info-content">
+                        <p class="label-small info-title">Mail Us</p>
+
+                        <a
+                          href="mailto:khalid@techgulf.com"
+                          class="label-small info-text"
+                          >khalid@techgulf.com</a
+                        >
+
+                        <a
+                          href="mailto:khalid@service.com"
+                          class="label-small info-text"
+                          >khalid@service.com</a
+                        >
+                      </div>
+                    </li>
+
+                    <li class="contact-info-item">
+                      <div class="icon-box">
+                        <span
+                          class="material-symbols-outlined"
+                          aria-hidden="true"
+                        >
+                          call
+                        </span>
+                      </div>
+
+                      <div class="info-content">
+                        <p class="label-small info-title">Contact Us</p>
+
+                        <a
+                          href="tel:+2382395632498"
+                          class="label-small info-text"
+                          >+2382395632498</a
+                        >
+
+                        <a
+                          href="tel:+2323982609238"
+                          class="label-small info-text"
+                          >+2323982609238</a
+                        >
+                      </div>
+                    </li>
+
+                    <li class="contact-info-item">
+                      <div class="icon-box">
+                        <span
+                          class="material-symbols-outlined"
+                          aria-hidden="true"
+                        >
+                          location_on
+                        </span>
+                      </div>
+
+                      <div class="info-content">
+                        <p class="label-small info-title">Address</p>
+
+                        <a
+                          href="tel:+2382395632498"
+                          class="label-small info-text"
+                          >Al Azbakeya, Cairo Governorate 4320001, Egypt</a
+                        >
+                      </div>
+                    </li>
+                  </ul>
+
+                  <h4 class="title-small">Social Info</h4>
+
+                  <div class="social-list">
+                    <a href="#" class="social-item">
+                      <img src="./assets/images/twitter.svg" alt="" />
+                    </a>
+
+                    <a href="#" class="social-item">
+                      <img src="./assets/images/instagram.svg" alt="" />
+                    </a>
+                  </div>
+                </div>
+
+                <div class="contact-form">
+                  <h3 class="title-large">Let’s Work Together.</h3>
+
+                  <form action="" method="post" class="input-wrapper">
+                    <input
+                      type="text"
+                      name="name"
+                      placeholder="Name*"
+                      required
+                      class="input-field"
+                    />
+
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder="Email**"
+                      required
+                      class="input-field"
+                    />
+
+                    <input
+                      type="text"
+                      name="subject"
+                      placeholder="Subject*"
+                      required
+                      class="input-field"
+                    />
+
+                    <textarea
+                      name="message"
+                      placeholder="Message*"
+                      required
+                      class="textarea"
+                    ></textarea>
+
+                    <button class="btn" type="submit">
+                      <span class="label-large">Send Message</span>
+
+                      <div class="state-layer"></div>
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+
+        <!-- 
+        - #INPUT EDIT
+        -->
+        <div></div>
+      </article>
+    </main>
+
+    <!-- 
+    - #FOOTER
+    -->
+    <footer class="footer" style="bottom: 0">
+      <div class="container">
+        <p class="body-medium">
+          Copyright 2025. All right reserved by novyantory
+        </p>
+      </div>
+    </footer>
+
+    <!-- 
+    - custom js link
+    -->
+    <script src="./js/script.js"></script>
+  </body>
+</html>

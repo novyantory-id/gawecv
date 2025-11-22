@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- 
+    - meta  tags
+    -->
+    <title>GaweCV - A software engineer portfolio</title>
+    <meta name="title" content="GaweCV - A software engineer portfolio" />
+    <meta
+      name="description"
+      content="This is a personal portfolio made by codewithsadee"
+    />
+
+    <!-- 
+    - favicon
+    -->
+    <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml" />
+
+    <!-- 
+    - google font link
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500&family=Open+Sans:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- 
+    - material icon link
+    -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+
+    <!-- 
+    - custom css link
+    -->
+
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <!-- 
+    - SIDEBAR
+    -->
+    <div class="sidebar">
+      <ul>
+        <li>
+          <a href="#" class="logo">
+            <span class="material-symbols-outlined">code_blocks</span>
+            <span>GAWECV</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="sidebar-link">
+            <span class="material-symbols-outlined">overview</span>
+            <span class="body-large">Overview</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="sidebar-link">
+            <span class="material-symbols-outlined">data_info_alert</span>
+            <span class="body-large">General & About</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="sidebar-link">
+            <span class="material-symbols-outlined">school</span>
+            <span class="body-large">Educations</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="sidebar-link">
+            <span class="material-symbols-outlined">work_history</span>
+            <span class="body-large">Experiences</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="#" class="sidebar-link">
+            <span class="material-symbols-outlined">psychology</span>
+            <span class="body-large">Skills</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="#" class="sidebar-link">
+            <span class="material-symbols-outlined">logout</span>
+            <span class="body-large">Logout</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- 
+    - #TOP BAR
+    -->
+
+    <header class="topbar">
+      <a href="#" class="logo">
+        <img
+          src="./assets/images/Logo_dark.png"
+          alt="GaweCV"
+          width="115"
+          height="26"
+          class="dark"
+        />
+        <img
+          src="./assets/images/Logo_light.png"
+          alt="GaweCV"
+          width="115"
+          height="26"
+          class="light"
+        />
+      </a>
+
+      <button class="icon-btn theme-btn" data-theme-btn>
+        <span class="material-symbols-outlined dark" aria-hidden="true">
+          dark_mode
+        </span>
+
+        <span class="material-symbols-outlined light" aria-hidden="true">
+          light_mode
+        </span>
+        <div class="state-layer"></div>
+      </button>
+    </header>
+
+    <!-- 
+    - #ABOUT
+    -->
+
+    <div class="about-me">
+        <div class="container">
+            <div class="contact-form mg-left">
+                    <h3 class="title-large">About Me.</h3>
+
+                    <form action="" method="post" class="input-wrapper">
+                    <input
+                        type="text"
+                        name="name"
+                        placeholder="Name*"
+                        required
+                        class="input-field"
+                    />
+
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="Email**"
+                        required
+                        class="input-field"
+                    />
+
+                    <input
+                        type="number"
+                        name="nohp"
+                        placeholder="nohp*"
+                        required
+                        class="input-field"
+                    />
+
+                    <input
+                        type="text"
+                        name="socialmedia"
+                        placeholder="instagram.com/suka-suka | linkedin.com/in/suka-suka10389"
+                        required
+                        class="input-field"
+                    />
+
+                    <textarea
+                        name="about"
+                        placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem numquam eos praesentium earum consequuntur, molestiae accusantium aliquid magnam cum impedit non voluptas asperiores quasi? Tempora mollitia quas est repellat eveniet quasi enim repellendus molestiae, exercitationem numquam?"
+                        required
+                        class="textarea"
+                    ></textarea>
+
+                    <textarea
+                        name="alamat"
+                        placeholder="Jl.Suka-suka Blok.VI Kelurahan Suka-suka Kec. Suka-suka Kota. Suka-suka*"
+                        required
+                        class="textarea"
+                    ></textarea>
+
+                    <button class="btn" type="submit">
+                        <span class="label-large">Save Change</span>
+
+                        <div class="state-layer"></div>
+                    </button>
+                    </f>
+                </div>
+        </div>
+    </div>
+
+    <!-- 
+    - #FOOTER
+    -->
+    <footer class="footer">
+      <div class="container">
+        <p class="body-medium">
+          Copyright 2025. All right reserved by novyantory
+        </p>
+      </div>
+    </footer>
+
+    <!-- 
+    - custom js link
+    -->
+    <script src="./js/script.js"></script>
+  </body>
+</html>
