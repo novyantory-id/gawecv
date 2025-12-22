@@ -14,6 +14,7 @@ class Education {
     };
 
     this.educations.push(newEducationData);
+
     localStorage.setItem("educations", JSON.stringify(this.educations));
 
     return {

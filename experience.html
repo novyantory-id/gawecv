@@ -44,7 +44,6 @@
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
-
     <!-- 
       - #TOP BAR
       -->
@@ -79,7 +78,6 @@
       </button>
     </header>
 
-    
     <!-- 
     - SIDEBAR
     -->
@@ -95,47 +93,57 @@
           <div class="about-me">
             <div class="container">
               <div class="contact-form">
-                <h3 class="title-large">Education</h3>
+                <h3 class="title-large">Experiences</h3>
 
-                <form id="educationForm">
+                <form id="experienceForm">
                   <input
                     type="text"
-                    name="pendidikan"
-                    id="pendidikan"
-                    placeholder="Institut Teknologi Bandung"
+                    name="company_name"
+                    id="company_name"
+                    placeholder="PT Kereta Api Indonesia"
                     required
                     class="input-field margin-bottom-input"
                   />
 
                   <input
                     type="text"
-                    name="jurusan"
-                    id="jurusan"
-                    placeholder="RPL / Sarjana 1 Akuntansi | 3.7/4.0"
+                    name="company_position"
+                    id="company_position"
+                    placeholder="Masinis"
                     required
                     class="input-field margin-bottom-input"
                   />
 
                   <input
                     type="text"
-                    name="lamapendidikan"
-                    id="lamapendidikan"
-                    placeholder="2021-2025"
+                    name="company_location"
+                    id="company_location"
+                    placeholder="Jakarta Pusat"
                     required
                     class="input-field margin-bottom-input"
                   />
 
                   <input
                     type="text"
-                    name="lokasipendidikan"
-                    id="lokasipendidikan"
-                    placeholder="Kota Bandung"
+                    name="company_during"
+                    id="company_during"
+                    placeholder="March 2018 - March 2020"
                     required
                     class="input-field margin-bottom-input"
                   />
+
+                  <textarea
+                    name="company_task"
+                    id="company_task"
+                    cols="6"
+                    rows="6"
+                    placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi sint harum tempora facilis, hic fugiat libero aspernatur similique quod itaque tempore animi nam porro quam. Harum sit non est beatae."
+                    required
+                    class="input-field margin-bottom-input"
+                  ></textarea>
 
                   <button class="btn" type="submit">
-                    <span class="label-large">Tambah Pendidikan</span>
+                    <span class="label-large">Tambah Pengalaman</span>
 
                     <div class="state-layer"></div>
                   </button>
@@ -181,8 +189,8 @@
     - custom js link
     -->
     <script src="./js/script.js"></script>
-    <script src="js/Controller/education.js"></script>
-    <script src="js/Model/Education.js"></script>
+    <script src="js/Controller/experience.js"></script>
+    <script src="js/Model/Experience.js"></script>
     <script src="js/include.js"></script>
   </body>
 </html>

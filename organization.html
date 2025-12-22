@@ -44,7 +44,6 @@
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
-
     <!-- 
       - #TOP BAR
       -->
@@ -79,7 +78,6 @@
       </button>
     </header>
 
-    
     <!-- 
     - SIDEBAR
     -->
@@ -95,47 +93,47 @@
           <div class="about-me">
             <div class="container">
               <div class="contact-form">
-                <h3 class="title-large">Education</h3>
+                <h3 class="title-large">Organization & Event</h3>
 
-                <form id="educationForm">
+                <form id="organizationForm">
                   <input
                     type="text"
-                    name="pendidikan"
-                    id="pendidikan"
-                    placeholder="Institut Teknologi Bandung"
+                    name="organization_name"
+                    id="organization_name"
+                    placeholder="Asian Games 2018 Jakarta/Palembang"
                     required
                     class="input-field margin-bottom-input"
                   />
 
                   <input
                     type="text"
-                    name="jurusan"
-                    id="jurusan"
-                    placeholder="RPL / Sarjana 1 Akuntansi | 3.7/4.0"
+                    name="organization_position"
+                    id="organization_position"
+                    placeholder="Operator Game Management Support"
                     required
                     class="input-field margin-bottom-input"
                   />
 
                   <input
                     type="text"
-                    name="lamapendidikan"
-                    id="lamapendidikan"
-                    placeholder="2021-2025"
+                    name="organization_location"
+                    id="organization_location"
+                    placeholder="Jakarta"
                     required
                     class="input-field margin-bottom-input"
                   />
 
                   <input
                     type="text"
-                    name="lokasipendidikan"
-                    id="lokasipendidikan"
-                    placeholder="Kota Bandung"
+                    name="organization_during"
+                    id="organization_during"
+                    placeholder="2018-2018"
                     required
                     class="input-field margin-bottom-input"
                   />
 
                   <button class="btn" type="submit">
-                    <span class="label-large">Tambah Pendidikan</span>
+                    <span class="label-large">Tambah Organization</span>
 
                     <div class="state-layer"></div>
                   </button>
@@ -181,8 +179,8 @@
     - custom js link
     -->
     <script src="./js/script.js"></script>
-    <script src="js/Controller/education.js"></script>
-    <script src="js/Model/Education.js"></script>
+    <script src="js/Controller/organization.js"></script>
+    <script src="js/Model/Organization.js"></script>
     <script src="js/include.js"></script>
   </body>
 </html>

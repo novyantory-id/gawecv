@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- 
+    - meta  tags
+    -->
+    <title>GaweCV - A software engineer portfolio</title>
+    <meta name="title" content="GaweCV - A software engineer portfolio" />
+    <meta
+      name="description"
+      content="This is a personal portfolio made by codewithsadee"
+    />
+
+    <!-- 
+    - favicon
+    -->
+    <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml" />
+
+    <!-- 
+    - google font link
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500&family=Open+Sans:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- 
+    - material icon link
+    -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+
+    <!-- 
+    - custom css link
+    -->
+
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <!-- 
+      - #TOP BAR
+      -->
+
+    <header class="topbar">
+      <a href="#" class="logo">
+        <img
+          src="./assets/images/Logo_dark.png"
+          alt="GaweCV"
+          width="115"
+          height="26"
+          class="dark"
+        />
+        <img
+          src="./assets/images/Logo_light.png"
+          alt="GaweCV"
+          width="115"
+          height="26"
+          class="light"
+        />
+      </a>
+
+      <button class="icon-btn theme-btn" data-theme-btn>
+        <span class="material-symbols-outlined dark" aria-hidden="true">
+          dark_mode
+        </span>
+
+        <span class="material-symbols-outlined light" aria-hidden="true">
+          light_mode
+        </span>
+        <div class="state-layer"></div>
+      </button>
+    </header>
+
+    <!-- 
+    - SIDEBAR
+    -->
+    <div id="sidebar"></div>
+
+    <main>
+      <article>
+        <!-- 
+        - #SOFT SKILL
+        -->
+        <div class="margin-top-content">
+          <div class="about-me">
+            <div class="container">
+              <div class="contact-form">
+                <h3 class="title-large">Fill the soft skill</h3>
+
+                <form id="softSkillForm">
+                  <input
+                    type="text"
+                    name="softskill"
+                    id="softskill"
+                    placeholder="Administrasi, kepemimpinan, keterampilan negosiasi dan persuasif"
+                    required
+                    class="input-field margin-bottom-input"
+                  />
+
+                  <button class="btn" type="submit">
+                    <span class="label-large">Tambah Soft Skill</span>
+
+                    <div class="state-layer"></div>
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 
+        - #VIEW DATA SOFT SKILL
+        -->
+        <div class="data-view" id="viewWrapperSoft"></div>
+
+        <div class="data-view" id="viewWrapperSoftEmpty">
+          <div class="container">
+            <div class="no-data-card mg-both visual-card">
+              <div class="notification-alert">
+                <span class="material-symbols-outlined">error</span>
+              </div>
+              <h1 class="title-large">Oops! No Data</h1>
+              <p class="label-large">
+                You need to create soft skill data for your curriculum vitae.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 
+        - #HARD SKILL
+        -->
+
+        <div class="margin-top-content">
+          <div class="about-me">
+            <div class="container">
+              <div class="contact-form">
+                <h3 class="title-large">Fill the hard skill</h3>
+
+                <form id="hardSkillForm">
+                  <input
+                    type="text"
+                    name="hardskill"
+                    id="hardskill"
+                    placeholder="Mengoperasikan Microsoft Office, email dan SPSS."
+                    required
+                    class="input-field margin-bottom-input"
+                  />
+
+                  <button class="btn" type="submit">
+                    <span class="label-large">Tambah Hard Skill</span>
+
+                    <div class="state-layer"></div>
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 
+        - #VIEW DATA HARD SKILL
+        -->
+        <div class="data-view" id="viewWrapperHard"></div>
+
+        <div class="data-view" id="viewWrapperHardEmpty">
+          <div class="container">
+            <div class="no-data-card mg-both visual-card">
+              <div class="notification-alert">
+                <span class="material-symbols-outlined">error</span>
+              </div>
+              <h1 class="title-large">Oops! No Data</h1>
+              <p class="label-large">
+                You need to create hard skill data for your curriculum vitae.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 
+        - # LANGUAGE SKILL
+        -->
+
+        <div class="margin-top-content">
+          <div class="about-me">
+            <div class="container">
+              <div class="contact-form">
+                <h3 class="title-large">Fill the language skill</h3>
+
+                <form id="languageSkillForm">
+                  <input
+                    type="text"
+                    name="languageskill"
+                    id="languageskill"
+                    placeholder="Bahasa Indonesia, Bahasa Inggris."
+                    required
+                    class="input-field margin-bottom-input"
+                  />
+
+                  <button class="btn" type="submit">
+                    <span class="label-large">Tambah Language Skill</span>
+
+                    <div class="state-layer"></div>
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 
+        - #VIEW DATA LANGUAGE SKILL
+        -->
+        <div class="data-view" id="viewWrapperLanguage"></div>
+
+        <div class="data-view" id="viewWrapperLanguageEmpty">
+          <div class="container">
+            <div class="no-data-card mg-both visual-card">
+              <div class="notification-alert">
+                <span class="material-symbols-outlined">error</span>
+              </div>
+              <h1 class="title-large">Oops! No Data</h1>
+              <p class="label-large">
+                You need to create language skill data for your curriculum
+                vitae.
+              </p>
+            </div>
+          </div>
+        </div>
+      </article>
+    </main>
+
+    <!-- 
+    - #FOOTER
+    -->
+    <div id="footer"></div>
+
+    <!-- 
+    - custom js link
+    -->
+    <script src="./js/script.js"></script>
+    <script src="js/Controller/skill.js"></script>
+    <script src="js/Model/SoftSkill.js"></script>
+    <script src="js/Model/HardSkill.js"></script>
+    <script src="js/Model/LanguageSkill.js"></script>
+    <script src="js/include.js"></script>
+  </body>
+</html>
