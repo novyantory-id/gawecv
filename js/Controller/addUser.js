@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
 
     const userData = {
-      email: document.getElementById("email").value,
+      email: document.getElementById("google_mail").value,
     };
 
     const result = userManager.saveUser(userData);

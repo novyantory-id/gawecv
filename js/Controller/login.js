@@ -1,6 +1,16 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const userForm = document.getElementById("userFormLogin");
   const userManager = new User();
+
+  const email = userManager.getLogins();
+
+  // Authentication
+  if (email) {
+    location.href = "../manage.html";
+    return;
+  }
+
+  //Login
+  const userForm = document.getElementById("userFormLogin");
 
   userForm.addEventListener("submit", (e) => {
     e.preventDefault();

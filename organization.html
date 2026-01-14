@@ -7,11 +7,11 @@
     <!-- 
     - meta  tags
     -->
-    <title>GaweCV - A software engineer portfolio</title>
-    <meta name="title" content="GaweCV - A software engineer portfolio" />
+    <title>GaweCV - A Curriculum Vitae Maker</title>
+    <meta name="title" content="GaweCV - Make Your Curriculum Vitae" />
     <meta
       name="description"
-      content="This is a personal portfolio made by codewithsadee"
+      content="Make a curriculum vitae without database and server"
     />
 
     <!-- 
@@ -49,7 +49,7 @@
       -->
 
     <header class="topbar">
-      <a href="#" class="logo">
+      <!-- <a href="#" class="logo">
         <img
           src="./assets/images/Logo_dark.png"
           alt="GaweCV"
@@ -64,7 +64,14 @@
           height="26"
           class="light"
         />
-      </a>
+      </a> -->
+      <a href="#" class="logo">
+          <img
+            src="./assets/landing-page/images/logo-gawecv.png"
+            width="150px"
+            alt="Gawecv logo"
+          />
+        </a>
 
       <button class="icon-btn theme-btn" data-theme-btn>
         <span class="material-symbols-outlined dark" aria-hidden="true">
@@ -81,7 +88,8 @@
     <!-- 
     - SIDEBAR
     -->
-    <div id="sidebar"></div>
+    <div id="sidebar">
+    </div>
 
     <main>
       <article>
@@ -90,9 +98,9 @@
     -->
 
         <div class="margin-top-content">
-          <div class="about-me">
+          <div class="card-container">
             <div class="container">
-              <div class="contact-form">
+              <div class="visual-card">
                 <h3 class="title-large">Organization & Event</h3>
 
                 <form id="organizationForm">
@@ -132,7 +140,25 @@
                     class="input-field margin-bottom-input"
                   />
 
-                  <button class="btn" type="submit">
+                  <div class="task-list">
+                    <div class="task-item">
+
+                      <textarea
+                        cols="6"
+                        rows="2"
+                        placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi sint harum tempora facilis, hic fugiat libero aspernatur similique quod itaque tempore animi nam porro quam. Harum sit non est beatae."
+                        required
+                        class="input-field margin-bottom-input organization-task"
+                      ></textarea>
+                      <button type="button" class="btn btn-remove-task">X</button>
+                    </div>
+                  </div>
+
+                  <button type="button" class="btn width-full margin-bottom-btn" id="btn-add-task">
+                    <span class="label-large">+ Tambah Tugas</span>
+                  </button>
+
+                  <button class="btn width-full" type="submit">
                     <span class="label-large">Tambah Organization</span>
 
                     <div class="state-layer"></div>
@@ -162,25 +188,73 @@
           </div>
         </div>
       </article>
+
+      <!-- 
+      - #MODAL
+      -->
+      <div id="editModal" class="modal hidden">
+          <div class="margin-top-content">
+            <div class="card-container mg-left-3x">
+              <div class="container">
+                <div class="visual-card">
+                  <h3>Edit Organization</h3>
+
+                  <input type="text" class="input-field margin-bottom-input" id="organization_nameModel" placeholder="Asian Games 2018 Jakarta/Palembang">
+                  <input type="text" class="input-field margin-bottom-input" id="organization_positionModel" placeholder="Operator Game Management Support">
+                  <input type="text" class="input-field margin-bottom-input" id="organization_locationModel" placeholder="Kota Jakarta Utara">
+                  <input type="text" class="input-field margin-bottom-input" id="organization_duringModel" placeholder="2018">
+
+                  <div id="taskListModal" class="task-listModal">
+                  </div>
+
+                  <button type="button" class="btn width-full margin-bottom-btn" id="btn-add-taskModal">
+                    <span class="label-large">+ Tambah Tugas</span>
+                  </button>
+                  
+                  <div class="modal-btn-flex">
+                    <button id="btnUpdate" class="btn width-full">Update</button>
+                    <button id="btnClose" class="btn width-full btn-close">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 
+        - #MODAL CONFIRMED
+        -->
+        <div id="deleteModal" class="delete-modal hidden">
+          <div class="margin-top-content">
+            <div class="visual-card mg-left-3x">
+              <div class="container">
+                <div class="card-confirm">
+                  <h3>Yakin Hapus Data?</h3>
+                  <div class="modal-btn-flex">
+                    <button id="btnDelete" class="btn width-full">Delete</button>
+                    <button id="btnClose" class="btn width-full btn-close">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
     </main>
 
     <!-- 
     - #FOOTER
     -->
-    <footer class="footer">
-      <div class="container">
-        <p class="body-medium">
-          Copyright 2025. All right reserved by novyantory
-        </p>
-      </div>
-    </footer>
+    <div id="footer">
+    </div>
 
     <!-- 
     - custom js link
     -->
     <script src="./js/script.js"></script>
+    <script src="js/include.js"></script>
     <script src="js/Controller/organization.js"></script>
     <script src="js/Model/Organization.js"></script>
-    <script src="js/include.js"></script>
+    <script src="./js/Model/User.js"></script>
+    <script src="./js/Controller/logout.js"></script>
   </body>
 </html>

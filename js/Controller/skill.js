@@ -1,4 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const userManager = new User();
+  const email = userManager.getLogins();
+
+  // Authentication
+  if (!email) {
+    alert("Silahkan login terlebih dahulu");
+    location.href = "login.html";
+    return;
+  }
+
   const softSkillManager = new SoftSkill();
   const softSkillForm = document.getElementById("softSkillForm");
 
@@ -62,22 +72,20 @@ document.addEventListener("DOMContentLoaded", () => {
   const viewWrapperSoftEmpty = document.getElementById("viewWrapperSoftEmpty");
 
   function allDisplaySoftSkill() {
-    if (existingSoftSkills.length === 0) {
+    if (!existingSoftSkills || !existingSoftSkills.softSkill) {
       viewWrapperSoft.className = "hidden";
+      // viewWrapperSoftEmpty.className = "";
+      return;
     } else {
       viewWrapperSoftEmpty.className = "hidden";
-      existingSoftSkills.forEach((softskill) => {
-        const itemSoftSkill = document.createElement("div");
-        itemSoftSkill.className = "container";
-        itemSoftSkill.innerHTML = `
+      const itemSoftSkill = document.createElement("div");
+      itemSoftSkill.className = "container";
+      itemSoftSkill.innerHTML = `
             <div class="card-content visual-card">
               <div class="left-side-card margin-bottom-letter-2x">
-                <h2 class="title-large">${softskill.softSkill}</h2>
+                <h2 class="title-large">${existingSoftSkills.softSkill}</h2>
               </div>
               <div class="btn-action">
-                <a href="#" class="action-link">
-                  <span class="material-symbols-outlined">edit</span>
-                </a>
                 <a href="#" class="action-link">
                   <span class="material-symbols-outlined">delete</span>
                 </a>
@@ -85,8 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
           
         `;
-        viewWrapperSoft.appendChild(itemSoftSkill);
-      });
+      viewWrapperSoft.appendChild(itemSoftSkill);
     }
   }
   allDisplaySoftSkill();
@@ -97,29 +104,26 @@ document.addEventListener("DOMContentLoaded", () => {
   const viewWrapperHardEmpty = document.getElementById("viewWrapperHardEmpty");
 
   function allDisplayHardSkill() {
-    if (existingHardSkills.length === 0) {
+    if (!existingHardSkills || !existingHardSkills.hardSkill) {
+      viewWrapperHard.className = "hidden";
+      // viewWrapperHardEmpty.className = "";
     } else {
       viewWrapperHardEmpty.className = "hidden";
-      existingHardSkills.forEach((hardskill) => {
-        const itemHardSkill = document.createElement("div");
-        itemHardSkill.className = "container";
-        itemHardSkill.innerHTML = `
+      const itemHardSkill = document.createElement("div");
+      itemHardSkill.className = "container";
+      itemHardSkill.innerHTML = `
             <div class="card-content visual-card">
               <div class="left-side-card margin-bottom-letter-2x">
-                <h2 class="title-large">${hardskill.hardSkill}</h2>
+                <h2 class="title-large">${existingHardSkills.hardSkill}</h2>
               </div>
               <div class="btn-action">
-                <a href="#" class="action-link">
-                  <span class="material-symbols-outlined">edit</span>
-                </a>
                 <a href="#" class="action-link">
                   <span class="material-symbols-outlined">delete</span>
                 </a>
               </div>
           </div>
         `;
-        viewWrapperHard.appendChild(itemHardSkill);
-      });
+      viewWrapperHard.appendChild(itemHardSkill);
     }
   }
   allDisplayHardSkill();
@@ -131,12 +135,13 @@ document.addEventListener("DOMContentLoaded", () => {
     "viewWrapperLanguageEmpty"
   );
 
-  function allDisplayLanguageSkill() {
-    if (existingLanguageSkills.length === 0) {
+  function allDisplayLanguageSkill(languageskills = existingLanguageSkills) {
+    viewWrapperLanguage.innerHTML = "";
+    if (languageskills.length === 0) {
       viewWrapperLanguage.className = "hidden";
     } else {
       viewWrapperLanguageEmpty.className = "hidden";
-      existingLanguageSkills.forEach((languageskill) => {
+      languageskills.forEach((languageskill) => {
         const itemLanguageSkill = document.createElement("div");
         itemLanguageSkill.className = "container";
         itemLanguageSkill.innerHTML = `
@@ -145,9 +150,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 <h2 class="title-large">${languageskill.languageSkill}</h2>
               </div>
               <div class="btn-action">
-                <a href="#" class="action-link">
+                <button href="#" class="action-link btn-edit" data-id=${languageskill.id}>
                   <span class="material-symbols-outlined">edit</span>
-                </a>
+                </button>
                 <a href="#" class="action-link">
                   <span class="material-symbols-outlined">delete</span>
                 </a>
@@ -159,4 +164,66 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
   allDisplayLanguageSkill();
+
+  //Edit Language Skill
+
+  // 1. open & close Modal
+  function openModal() {
+    document.getElementById("editModal").classList.remove("hidden");
+    document.querySelector("article").classList.add("blur");
+  }
+
+  function closeModal() {
+    document.getElementById("editModal").classList.add("hidden");
+    document.querySelector("article").classList.remove("blur");
+  }
+
+  // 2. Close Modal
+
+  document.addEventListener("click", function (e) {
+    // 3. check btn-edit
+    const btn = e.target.closest(".btn-edit");
+    if (!btn) return;
+
+    // 4. check data-id
+    const id = btn.dataset.id;
+    console.log("id yang diklik: ", id);
+
+    // 5. find id in model
+    const languageSkill = languageSkillManager.getLanguageSkills();
+    const data = languageSkill.find((item) => item.id == id);
+
+    // 6. matches data id
+    if (!data) {
+      console.log("data tidak ditemukan dengan id: ", data);
+    }
+    console.log(data);
+
+    // 7. open & view in modal
+    openModal();
+
+    document.getElementById("languageskillModal").value = data.languageSkill;
+
+    // 8. set Editing ID
+    localStorage.setItem("editingLanguageSkillId", data.id);
+  });
+
+  // 9. Update Data
+  document.getElementById("btnUpdate").addEventListener("click", function () {
+    const languageSkillModel = new LanguageSkill();
+
+    const id = localStorage.getItem("editingLanguageSkillId");
+
+    const newData = {
+      id: id,
+      languageSkill: document.getElementById("languageskillModal").value,
+    };
+
+    languageSkillModel.updateLanguageSkill(id, newData);
+    closeModal();
+    localStorage.removeItem("editingLanguageSkillId");
+
+    const languageskill = languageSkillModel.getLanguageSkills();
+    allDisplayLanguageSkill(languageskill);
+  });
 });

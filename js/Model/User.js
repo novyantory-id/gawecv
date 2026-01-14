@@ -1,7 +1,12 @@
 class User {
   constructor() {
-    this.users = this.getUsers() || [];
+    this.users = this.getUsers();
   }
+
+  getUsers() {
+    return JSON.parse(localStorage.getItem("users")) || [];
+  }
+
   saveUser(userData) {
     const newUser = {
       id: Date.now(),
@@ -38,7 +43,22 @@ class User {
     }
   }
 
-  getUsers() {
-    return JSON.parse(localStorage.getItem("users")) || [];
+  getLogins() {
+    return localStorage.getItem("emailLoggedIn") || null;
+  }
+
+  getUserByEmail(email) {
+    return this.getUsers().find((u) => u.email === email);
+  }
+
+  updateUser(updateUser) {
+    const users = this.getUsers().map((u) =>
+      u.email === updateUser.email ? updateUser : u
+    );
+    localStorage.setItem("users", JSON.stringify(users));
+  }
+
+  logoutUser() {
+    return localStorage.removeItem("emailLoggedIn") || null;
   }
 }

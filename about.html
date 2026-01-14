@@ -7,11 +7,11 @@
     <!-- 
     - meta  tags
     -->
-    <title>GaweCV - A software engineer portfolio</title>
-    <meta name="title" content="GaweCV - A software engineer portfolio" />
+    <title>GaweCV - A Curriculum Vitae Maker</title>
+    <meta name="title" content="GaweCV - Make Your Curriculum Vitae" />
     <meta
       name="description"
-      content="This is a personal portfolio made by codewithsadee"
+      content="Make a curriculum vitae without database and server"
     />
 
     <!-- 
@@ -49,7 +49,7 @@
       -->
 
     <header class="topbar">
-      <a href="#" class="logo">
+      <!-- <a href="#" class="logo">
         <img
           src="./assets/images/Logo_dark.png"
           alt="GaweCV"
@@ -64,7 +64,15 @@
           height="26"
           class="light"
         />
-      </a>
+      </a> -->
+
+      <a href="#" class="logo">
+          <img
+            src="./assets/landing-page/images/logo-gawecv.png"
+            width="150px"
+            alt="Gawecv logo"
+          />
+        </a>
 
       <button class="icon-btn theme-btn" data-theme-btn>
         <span class="material-symbols-outlined dark" aria-hidden="true">
@@ -91,7 +99,12 @@
             <div class="contact-form">
                     <h3 class="title-large">About Me.</h3>
 
-                    <form action="" method="post" class="input-wrapper">
+                    <form action="" method="post" class="input-wrapper" id="aboutForm">
+                      <input
+                        type="hidden"
+                        name="id"
+                        class="input-field"
+                    />
                     <input
                         type="text"
                         name="name"
@@ -112,7 +125,6 @@
                         type="number"
                         name="nohp"
                         placeholder="nohp*"
-                        required
                         class="input-field"
                     />
 
@@ -120,23 +132,36 @@
                         type="text"
                         name="socialmedia"
                         placeholder="instagram.com/suka-suka | linkedin.com/in/suka-suka10389"
-                        required
+                        class="input-field"
+                    />
+
+                    <input
+                        type="text"
+                        name="lulusan"
+                        placeholder="Sarjana 1 | Sekolah Menegah Kejuruan"
                         class="input-field"
                     />
 
                     <textarea
                         name="about"
                         placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem numquam eos praesentium earum consequuntur, molestiae accusantium aliquid magnam cum impedit non voluptas asperiores quasi? Tempora mollitia quas est repellat eveniet quasi enim repellendus molestiae, exercitationem numquam?"
-                        required
+                        
                         class="textarea"
                     ></textarea>
 
                     <textarea
                         name="alamat"
-                        placeholder="Jl.Suka-suka Blok.VI Kelurahan Suka-suka Kec. Suka-suka Kota. Suka-suka*"
-                        required
+                        placeholder="Jl.Suka-suka Blok.VI Kelurahan Suka-suka Kec. Suka-suka*"
+                        
                         class="textarea"
                     ></textarea>
+
+                    <input
+                        type="text"
+                        name="regional"
+                        placeholder="Deli Serdang, NAD*"
+                        class="input-field"
+                    />
 
                     <button class="btn" type="submit">
                         <span class="label-large">Save Change</span>
@@ -160,6 +185,10 @@
     - custom js link
     -->
     <script src="./js/script.js"></script>
-    <script src="/js/include.js"></script>
+    <script src="./js/include.js"></script>
+    <script src="./js/Model/User.js"></script>
+    <script src="./js/Controller/about.js"></script>
+    <script src="./js/Controller/logout.js"></script>
+    
   </body>
 </html>

@@ -12,9 +12,11 @@ class SoftSkill {
       ...softSkillData,
     };
 
-    this.softskills.push(newSoftSkillData);
+    // this.softskills.push(newSoftSkillData);
 
-    localStorage.setItem("softskills", JSON.stringify(this.softskills));
+    // localStorage.setItem("softskills", JSON.stringify(this.softskills));
+
+    localStorage.setItem("softskills", JSON.stringify(newSoftSkillData));
 
     return {
       success: true,

@@ -330,6 +330,10 @@ main {flex: 1;}
   gap: 10px;
 }
 
+.width-full {
+  width: 100%;
+}
+
 .margin-bottom-letter {
   margin-bottom: 5px;
 }
@@ -342,20 +346,78 @@ main {flex: 1;}
   display: none;
 }
 
+
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+}
+
+.modal-2 {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+}
+
+.delete-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  top: 30%;
+}
+
+.modal-btn-flex {
+  display: flex;
+  gap: 5px;
+}
+
+.blur {
+  filter: blur(4px);
+  pointer-events: none;
+  user-select: none;
+}
+
 .margin-top-content {
   margin-top: 80px;
 }
 
-.margin-bottom-input {
+.margin-space-content {
+  margin-top: 40px;
+}
+
+.margin-bottom-input,
+.margin-bottom-btn {
   margin-bottom: 5px;
 }
 
 article {
   padding-left: var(--padding-left-content);
+  transition: filter .2s ease;
 }
 
 .mg-left {
   margin-left: 15px;
+}
+
+.mg-left-2x {
+  margin-left: 30px;
+}
+
+.mg-left-3x {
+  margin-left: 45px;
+}
+
+.task-list-view {
+  padding-left: 20px !important;
+}
+
+.task-list-view li {
+  line-height: 1.3 !important;
+  list-style-type: disc !important;
 }
 
 .mg-both {
@@ -432,7 +494,11 @@ article {
 }
 
 .section-title {
-  margin-block-end: 16px;
+  margin-block-end: 12px;
+}
+
+.section-content {
+  margin-block-end: 20px;
 }
 
 /*-----------------------------------*\
@@ -463,7 +529,31 @@ article {
   --state-layer-bg: var(var(--on-primary));
 }
 
-.btn:hover:not(:focus) {
+.btn.btn-remove-task,
+.btn.btn-remove-taskModal
+ {
+  height: 25px;
+  display: grid;
+  place-items: center;
+  padding-inline: 8px;
+  border-radius: var(--radius-full);
+  background-color: var(--primary);
+  color: var(--on-primary);
+  font-weight: var(--weight-medium);
+  overflow: hidden;
+  opacity: 0.4;
+  --state-layer-bg: var(var(--on-primary));
+}
+
+.btn.btn-remove-task:hover,
+.btn.btn-remove-taskModal:hover
+{
+  transition: ease-in-out 0.3s;
+  opacity: 1;
+}
+
+.btn.btn-remove-task:hover:not(:focus),
+.btn.btn-remove-taskModal:hover:not(:focus) {
   box-shadow: var(--elevation-1);
 }
 
@@ -611,7 +701,7 @@ article {
   height: var(--top-bar-height);
 
   align-items: center;
-  padding-inline: 16px;
+  padding-inline: 9px;
 }
 
 .topbar {
@@ -746,6 +836,10 @@ article {
   margin-block-end: 28px;
 }
 
+/* .experience-tab .container {
+  margin-bottom: 45px;
+} */
+
 .skill-tab .list {
   display: grid;
   gap: 24px;
@@ -863,6 +957,28 @@ article {
   border-radius: var(--radius-medium);
 }
 
+.card-confirm {
+  background-color: var(--surface-container);
+  padding: 16px;
+  margin-block-end: 16px;
+  border-radius: var(--radius-medium);
+  border: var(--outline);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
+  0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.task-item,
+.task-itemModal {
+  position: relative;
+}
+
+.task-item .btn-remove-task,
+.task-itemModal .btn-remove-taskModal {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
 /*-----------------------------------*\
   #FOOTER
 \*-----------------------------------*/
@@ -901,6 +1017,8 @@ footer {
   gap: 2px;
   padding: 4px;
 }
+
+
 
 /*-----------------------------------*\
   #MEDIA QUERIES
@@ -1008,7 +1126,7 @@ footer {
 .sidebar ul {
   position: relative;
   height: 97vh;
-  margin-top: 15px;
+  margin-top: -3px;
 }
 
 .sidebar ul li {
@@ -1028,7 +1146,7 @@ footer {
   align-items: center;
   white-space: nowrap;
   text-decoration: none;
-  color: var(--primary);
+  color: var(--outline);
 }
 
 .sidebar ul li .logo {

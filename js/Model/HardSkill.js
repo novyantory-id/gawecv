@@ -12,9 +12,11 @@ class HardSkill {
       ...hardSkillData,
     };
 
-    this.hardskills.push(newHardSkillData);
+    // this.hardskills.push(newHardSkillData);
 
-    localStorage.setItem("hardskills", JSON.stringify(this.hardskills));
+    // localStorage.setItem("hardskills", JSON.stringify(this.hardskills));
+
+    localStorage.setItem("hardskills", JSON.stringify(newHardSkillData));
 
     return {
       success: true,

@@ -20,4 +20,17 @@ class LanguageSkill {
       success: true,
     };
   }
+
+  updateLanguageSkill(id, newData) {
+    const languageSkills = this.getLanguageSkills();
+    const index = languageSkills.findIndex((item) => item.id == id);
+
+    if (index === -1) {
+      console.log("Data tidak ditemukan", id);
+    }
+
+    languageSkills[index] = newData;
+
+    localStorage.setItem("languageskills", JSON.stringify(languageSkills));
+  }
 }

@@ -7,11 +7,11 @@
     <!-- 
     - meta  tags
     -->
-    <title>GaweCV - A software engineer portfolio</title>
-    <meta name="title" content="GaweCV - A software engineer portfolio" />
+    <title>GaweCV - A Curriculum Vitae Maker</title>
+    <meta name="title" content="GaweCV - Make Your Curriculum Vitae" />
     <meta
       name="description"
-      content="This is a personal portfolio made by codewithsadee"
+      content="Make a curriculum vitae without database and server"
     />
 
     <!-- 
@@ -50,7 +50,7 @@
       -->
 
     <header class="topbar">
-      <a href="#" class="logo">
+      <!-- <a href="#" class="logo">
         <img
           src="./assets/images/Logo_dark.png"
           alt="GaweCV"
@@ -65,7 +65,15 @@
           height="26"
           class="light"
         />
-      </a>
+      </a> -->
+
+      <a href="#" class="logo">
+          <img
+            src="./assets/landing-page/images/logo-gawecv.png"
+            width="150px"
+            alt="Gawecv logo"
+          />
+        </a>
 
       <button class="icon-btn theme-btn" data-theme-btn>
         <span class="material-symbols-outlined dark" aria-hidden="true">
@@ -92,7 +100,7 @@
     -->
 
         <div class="margin-top-content">
-          <div class="about-me">
+          <div class="card-container">
             <div class="container">
               <div class="contact-form">
                 <h3 class="title-large">Education</h3>
@@ -134,7 +142,7 @@
                     class="input-field margin-bottom-input"
                   />
 
-                  <button class="btn" type="submit">
+                  <button class="btn width-full" type="submit">
                     <span class="label-large">Tambah Pendidikan</span>
 
                     <div class="state-layer"></div>
@@ -163,26 +171,70 @@
             </div>
           </div>
         </div>
+
+        
       </article>
+
+      <!-- 
+        - #MODAL
+        -->
+        <div id="editModal" class="modal hidden">
+          <div class="margin-top-content">
+            <div class="about-me mg-left-3x">
+              <div class="container">
+                <div class="contact-form">
+                  <h3>Edit Education</h3>
+
+                  <input type="text" class="input-field margin-bottom-input" id="pendidikanModal" placeholder="Institut Teknologi Bandung">
+                  <input type="text" class="input-field margin-bottom-input" id="jurusanModal" placeholder="RPL / Sarjana 1 Akuntansi | 3.7/4.0">
+                  <input type="text" class="input-field margin-bottom-input" id="lamapendidikanModal" placeholder="2021-2025">
+                  <input type="text" class="input-field margin-bottom-input" id="lokasipendidikanModal" placeholder="Kota Bandung">
+
+                  <div class="modal-btn-flex">
+                    <button id="btnUpdate" class="btn width-full">Update</button>
+                    <button id="btnClose" class="btn width-full btn-close">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 
+        - #MODAL CONFIRMED
+        -->
+        <div id="deleteModal" class="delete-modal hidden">
+          <div class="margin-top-content">
+            <div class="card-container mg-left-3x">
+              <div class="container">
+                <div class="card-confirm">
+                  <h3>Yakin Hapus Data?</h3>
+                  <div class="modal-btn-flex">
+                    <button id="btnDelete" class="btn width-full">Delete</button>
+                    <button id="btnClose" class="btn width-full btn-close">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
     </main>
 
     <!-- 
     - #FOOTER
     -->
-    <footer class="footer">
-      <div class="container">
-        <p class="body-medium">
-          Copyright 2025. All right reserved by novyantory
-        </p>
-      </div>
-    </footer>
+    <div id="footer">
+    </div>
 
     <!-- 
     - custom js link
     -->
     <script src="./js/script.js"></script>
-    <script src="js/Controller/education.js"></script>
-    <script src="js/Model/Education.js"></script>
-    <script src="js/include.js"></script>
+    <script src="./js/include.js"></script>
+    <script src="./js/Controller/education.js"></script>
+    <script src="./js/Model/Education.js"></script>
+    <script src="./js/Model/User.js"></script>
+    <script src="./js/Controller/logout.js"></script>
+    
   </body>
 </html>

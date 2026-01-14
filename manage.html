@@ -7,11 +7,11 @@
     <!-- 
     - meta  tags
     -->
-    <title>GaweCV - A software engineer portfolio</title>
-    <meta name="title" content="GaweCV - A software engineer portfolio" />
+    <title>GaweCV - A Curriculum Vitae Maker</title>
+    <meta name="title" content="GaweCV - Make Your Curriculum Vitae" />
     <meta
       name="description"
-      content="This is a personal portfolio made by codewithsadee"
+      content="Make a curriculum vitae without database and server"
     />
 
     <!-- 
@@ -50,7 +50,7 @@
     -->
 
     <header class="topbar">
-      <a href="#" class="logo">
+      <!-- <a href="#" class="logo">
         <img
           src="./assets/images/Logo_dark.png"
           alt="GaweCV"
@@ -65,7 +65,15 @@
           height="26"
           class="light"
         />
-      </a>
+      </a> -->
+
+      <a href="#" class="logo">
+          <img
+            src="./assets/landing-page/images/logo-gawecv.png"
+            width="150px"
+            alt="Gawecv logo"
+          />
+        </a>
 
       <button class="icon-btn theme-btn" data-theme-btn>
         <span class="material-symbols-outlined dark" aria-hidden="true">
@@ -109,11 +117,11 @@
             </figure>
 
             <div class="hero-content">
-              <span class="label-large section-subtitle">Akuntansi</span>
+              <span class="label-large section-subtitle" id="lulusanAbout">Akuntansi</span>
 
-              <h1 class="display-small">Budiono Siregar</h1>
+              <h1 class="display-small" id="nameAbout">Budiono Siregar</h1>
 
-              <p class="body-large section-text">
+              <p class="body-large section-text" id="addressAbout">
                 Jl. Tirtayasa Raya RT.004/RW.005 Kel. Deli Serdang Kec. Deli
                 Serdang Kota Deli Serdang 33019
               </p>
@@ -124,7 +132,7 @@
                     mail
                   </span>
 
-                  <span class="label-large">khalid@techgulf.com</span>
+                  <span class="label-large" id="emailAbout">yourname@mail.com</span>
 
                   <div class="state-layer"></div>
                 </a>
@@ -134,7 +142,7 @@
                     call
                   </span>
 
-                  <span class="label-large">+213908539206</span>
+                  <span class="label-large" id="nohpAbout">+213908539206</span>
 
                   <div class="state-layer"></div>
                 </a>
@@ -151,7 +159,7 @@
           <div class="about-card">
             <h2 class="card-title title-medium">About</h2>
 
-            <p class="body-medium card-text">
+            <p class="body-medium card-text" id="descAbout">
               Lulusan sarjana program studi Akuntansi di Sekolah Tinggi Ilmu
               Ekonomi Deli Serdang Aceh dengan IPK 3.67. Senang belajar hal baru
               dan berorientasi pada detail serta memiliki latar belakang
@@ -164,21 +172,21 @@
                 <span class="material-symbols-outlined" aria-hidden="true">
                   location_on
                 </span>
-                <span class="label-medium">Deli Serdang, Aceh</span>
+                <span class="label-medium" id="regionalAbout">Deli Serdang, Aceh</span>
               </li>
 
               <li class="list-item">
                 <span class="material-symbols-outlined" aria-hidden="true">
                   work
                 </span>
-                <span class="label-medium">D3 Akuntansi</span>
+                <span class="label-medium" id="jurusanAbout">D3 Akuntansi</span>
               </li>
 
               <li class="list-item">
                 <span class="material-symbols-outlined" aria-hidden="true">
                   captive_portal
                 </span>
-                <a href="https://example.com" class="label-medium"
+                <a href="#" class="label-medium" id="socialMediaAbout"
                   >https://example.com</a
                 >
               </li>
@@ -192,19 +200,19 @@
 
             <div class="primary-tabs">
               <button class="tab-btn active" data-tab-btn="education">
-                <span class="tab-text title-small">Education</span>
+                <span class="tab-text title-small">EDUCATION</span>
 
                 <div class="state-layer"></div>
               </button>
 
               <button class="tab-btn" data-tab-btn="experience">
-                <span class="tab-text title-small">Experience</span>
+                <span class="tab-text title-small">EXPERIENCE</span>
 
                 <div class="state-layer"></div>
               </button>
 
               <button class="tab-btn" data-tab-btn="skill">
-                <span class="tab-text title-small">Skill</span>
+                <span class="tab-text title-small">SKILL</span>
 
                 <div class="state-layer"></div>
               </button>
@@ -219,10 +227,19 @@
               data-tab-content="education"
             >
               <div class="container">
-                <h2 class="section-title title-small">Education</h2>
+                <h2 class="section-title title-small">EDUCATIONS</h2>
+
+                <div id="educationListEmpty">
+                  <p class="section-content body-medium"><em>Tidak ada data.</em></p>
+                </div>
+
                   <ul class="list" id="educationList"></ul>
 
-                <h2 class="section-title title-small">Courses</h2>
+                <h2 class="section-title title-small">COURSES</h2>
+
+                <div id="courseListEmpty">
+                  <p class="section-content body-medium"><em>Tidak ada data.</em></p>
+                </div>
 
                 <ul class="list" id="courseList">
                 </ul>
@@ -238,18 +255,30 @@
               data-tab-content="experience"
             >
               <div class="container">
-                <h2 class="section-title title-small">Experience</h2>
+                <h2 class="section-title title-small">EXPERIENCES</h2>
+
+                <div id="experienceListEmpty">
+                  <p class="section-content body-medium"><em>Tidak ada data.</em></p>
+                </div>
 
                 <ul class="list" id="experienceList">
                   
                 </ul>
 
-                <h2 class="section-title title-small">Internship</h2>
+                <h2 class="section-title title-small">INTERNSHIPS</h2>
+
+                <div id="internshipListEmpty">
+                  <p class="section-content body-medium"><em>Tidak ada data.</em></p>
+                </div>
 
                 <ul class="list" id="internshipList">
                 </ul>
 
-                <h2 class="section-title title-small">Organization</h2>
+                <h2 class="section-title title-small">ORGANIZATIONS</h2>
+
+                <div id="organizationListEmpty">
+                  <p class="section-content body-medium"><em>Tidak ada data.</em></p>
+                </div>
 
                 <ul class="list" id="organizationList">
                   
@@ -269,20 +298,32 @@
                 <ul class="list">
                   <li class="resume-item">
                     <div class="resume-card" id="softSkillList">
-                      <h2 class="section-title title-small">Soft Skill</h2>
+                      <h2 class="section-title title-small">SOFT SKILL</h2>
+
+                      <div id="softSkillListEmpty">
+                        <p class="section-content body-medium"><em>Tidak ada data.</em></p>
+                      </div>
                     </div>
                   </li>
 
                   <li class="resume-item">
                     <div class="resume-card" id="hardSkillList">
-                      <h2 class="section-title title-small">Hard Skill</h2>
+                      <h2 class="section-title title-small">HARD SKILL</h2>
+
+                      <div id="hardSkillListEmpty">
+                        <p class="section-content body-medium"><em>Tidak ada data.</em></p>
+                      </div>
 
                     </div>
                   </li>
 
                   <li class="resume-item">
                     <div class="resume-card" id="languageSkillList">
-                      <h2 class="section-title title-small">Bahasa</h2>
+                      <h2 class="section-title title-small">BAHASA</h2>
+
+                      <div id="languageSkillListEmpty">
+                        <p class="section-content body-medium"><em>Tidak ada data.</em></p>
+                      </div>
 
                     </div>
                   </li>
@@ -454,6 +495,8 @@
     <script src="./js/Model/LanguageSkill.js"></script>
     <script src="./js/Model/Organization.js"></script>
     <script src="./js/Model/Experience.js"></script>
+    <script src="./js/Model/User.js"></script>
     <script src="./js/Controller/manage.js"></script>
+    <script src="./js/Controller/logout.js"></script>
   </body>
 </html>
