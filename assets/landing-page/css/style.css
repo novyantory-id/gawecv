@@ -164,7 +164,7 @@ body {
 
 .btn-primary {
   color: var(--white);
-  background: var(--amethyst-purple);
+  background: var(--space-cadet);
 }
 
 .btn > ion-icon {
@@ -280,7 +280,7 @@ body {
 }
 
 .navbar-link:is(:hover, :focus) {
-  color: var(--red-crayola);
+  color: var(--periwinkle-blue);
 }
 
 .header .btn {
@@ -360,7 +360,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 5px;
-  color: var(--red-crayola);
+  color: var(--periwinkle-blue);
   font-size: var(--fs-5);
   font-weight: var(--fw-600);
   transition: var(--transition);
@@ -409,7 +409,7 @@ body {
 
 .service-item-icon {
   background: var(--cultured);
-  color: var(--red-crayola);
+  color: var(--space-cadet);
   min-width: 30px;
   height: 30px;
   display: grid;
@@ -423,7 +423,7 @@ body {
 }
 
 .service-item:hover .service-item-icon {
-  background: var(--red-crayola);
+  background: var(--space-cadet);
   color: var(--white);
 }
 
@@ -452,7 +452,7 @@ body {
 }
 
 .input-field:focus {
-  outline-color: var(--red-crayola);
+  outline-color: var(--space-cadet);
 }
 
 /*-----------------------------------*\
@@ -480,7 +480,7 @@ body {
 }
 
 .copyright > a:is(:hover, :focus) {
-  color: var(--red-crayola);
+  color: var(--space-cadet);
 }
 
 .social-list {
@@ -502,7 +502,7 @@ body {
 }
 
 .social-link:is(:hover, :focus) {
-  background: var(--red-crayola);
+  background: var(--space-cadet);
 }
 
 /*-----------------------------------*\

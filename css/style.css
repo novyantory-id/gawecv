@@ -627,6 +627,12 @@ article {
   --state-layer-bg: var(--on-surface-variant);
 }
 
+.btn-download {
+  position: absolute;
+  top: -4px;
+  right: 5px;
+}
+
 .chip .material-symbols-outlined {
   font-size: 1.7rem;
 }
@@ -763,7 +769,10 @@ article {
 
 .hero-content {
   max-width: 500px;
+  position: relative;
 }
+
+
 
 .hero .section-subtitle {
   color: var(--on-surface-variant);

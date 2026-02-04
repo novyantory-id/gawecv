@@ -38,6 +38,18 @@
     />
 
     <!-- 
+    - jsPDF
+    -->
+    <script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
+
+    <!-- 
+    - Custom Font Report
+    -->
+    <!-- <script src="./assets/fonts/ShortBaby-Mg2w-normal.js"></script>
+    <script src="./assets/fonts/Lato-Regular-normal.js"></script> -->
+    <script src="./assets/fonts/fonts.js"></script>
+
+    <!-- 
     - custom css link
     -->
 
@@ -117,6 +129,17 @@
             </figure>
 
             <div class="hero-content">
+
+              <a href="#" class="chip btn-download" id="btnDownloadPDF">
+                  <span class="material-symbols-outlined" aria-hidden="true">
+                    download_2
+                  </span>
+
+                  <span class="label-large">Download CV</span>
+
+                  <div class="state-layer"></div>
+                </a>
+              
               <span class="label-large section-subtitle" id="lulusanAbout">Akuntansi</span>
 
               <h1 class="display-small" id="nameAbout">Budiono Siregar</h1>
@@ -497,6 +520,7 @@
     <script src="./js/Model/Experience.js"></script>
     <script src="./js/Model/User.js"></script>
     <script src="./js/Controller/manage.js"></script>
+    <script src="./js/Controller/report.js"></script>
     <script src="./js/Controller/logout.js"></script>
   </body>
 </html>
