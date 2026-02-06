@@ -17,7 +17,7 @@
     <!-- 
     - favicon
     -->
-    <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="./favicon-img.png" type="image/png" />
 
     <!-- 
     - google font link
@@ -93,127 +93,39 @@
 
     <main>
       <article>
+
         <!-- 
-        - #SOFT SKILL
+        - # SKILL
         -->
+
         <div class="margin-top-content">
-          <div class="card-container">
-            <div class="container">
-              <div class="visual-card">
-                <h3 class="title-large">Fill the soft skill</h3>
-
-                <form id="softSkillForm">
-                  <input
-                    type="text"
-                    name="softskill"
-                    id="softskill"
-                    placeholder="Administrasi, kepemimpinan, keterampilan negosiasi dan persuasif"
-                    required
-                    class="input-field margin-bottom-input"
-                  />
-
-                  <button class="btn" type="submit">
-                    <span class="label-large">Create or Change</span>
-
-                    <div class="state-layer"></div>
-                  </button>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- 
-        - #VIEW DATA SOFT SKILL
-        -->
-        <div class="data-view" id="viewWrapperSoft"></div>
-
-        <div class="data-view" id="viewWrapperSoftEmpty">
-          <div class="container">
-            <div class="no-data-card mg-both visual-card">
-              <div class="notification-alert">
-                <span class="material-symbols-outlined">error</span>
-              </div>
-              <h1 class="title-large">Oops! No Data</h1>
-              <p class="label-large">
-                You need to create soft skill data for your curriculum vitae.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- 
-        - #HARD SKILL
-        -->
-
-        <div class="margin-space-content">
-          <div class="card-container">
-            <div class="container">
-              <div class="visual-card">
-                <h3 class="title-large">Fill the hard skill</h3>
-
-                <form id="hardSkillForm">
-                  <input
-                    type="text"
-                    name="hardskill"
-                    id="hardskill"
-                    placeholder="Mengoperasikan Microsoft Office, email dan SPSS."
-                    required
-                    class="input-field margin-bottom-input"
-                  />
-
-                  <button class="btn" type="submit">
-                    <span class="label-large">Create or Change</span>
-
-                    <div class="state-layer"></div>
-                  </button>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- 
-        - #VIEW DATA HARD SKILL
-        -->
-        <div class="data-view" id="viewWrapperHard"></div>
-
-        <div class="data-view" id="viewWrapperHardEmpty">
-          <div class="container">
-            <div class="no-data-card mg-both visual-card">
-              <div class="notification-alert">
-                <span class="material-symbols-outlined">error</span>
-              </div>
-              <h1 class="title-large">Oops! No Data</h1>
-              <p class="label-large">
-                You need to create hard skill data for your curriculum vitae.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- 
-        - # LANGUAGE SKILL
-        -->
-
-        <div class="margin-space-content">
           <div class="card-container">
             <div class="container">
               <div class="visual-card">
                 <h3 class="title-large">Fill the language skill</h3>
 
-                <form id="languageSkillForm">
+                <form id="skillForm">
                   <input
                     type="text"
-                    name="languageskill"
-                    id="languageskill"
-                    placeholder="Bahasa Inggris"
+                    name="title_skill"
+                    id="title_skill"
+                    placeholder="Welder Processes"
                     required
                     class="input-field margin-bottom-input"
                   />
 
+                  <textarea
+                        cols="6"
+                        rows="2"
+                        name="skill_value"
+                        id="skill_value"
+                        placeholder="SMAW, FCAW, GMAW (MIG)"
+                        required
+                        class="input-field margin-bottom-input"
+                      ></textarea>
+
                   <button class="btn" type="submit">
-                    <span class="label-large">Tambah Language Skill</span>
+                    <span class="label-large">Tambah Skill</span>
 
                     <div class="state-layer"></div>
                   </button>
@@ -224,11 +136,11 @@
         </div>
 
         <!-- 
-        - #VIEW DATA LANGUAGE SKILL
+        - #VIEW DATA SKILL
         -->
-        <div class="data-view" id="viewWrapperLanguage"></div>
+        <div class="data-view" id="viewWrapperSkill"></div>
 
-        <div class="data-view" id="viewWrapperLanguageEmpty">
+        <div class="data-view" id="viewWrapperSkillEmpty">
           <div class="container">
             <div class="no-data-card mg-both visual-card">
               <div class="notification-alert">
@@ -236,7 +148,7 @@
               </div>
               <h1 class="title-large">Oops! No Data</h1>
               <p class="label-large">
-                You need to create language skill data for your curriculum
+                You need to create skill data for your curriculum
                 vitae.
               </p>
             </div>
@@ -252,13 +164,42 @@
             <div class="card-container mg-left-3x">
               <div class="container">
                 <div class="visual-card">
-                  <h3>Edit Language Skill</h3>
+                  <h3>Edit Skill</h3>
 
-                  <input type="text" class="input-field margin-bottom-input" id="languageskillModal" placeholder="Bahasa Inggris">
+                  <input type="text" class="input-field margin-bottom-input" id="title_skillModal" placeholder="Welding Processes">
+
+                  <textarea
+                        cols="6"
+                        rows="2"
+                        name="skill_valueModal"
+                        id="skill_valueModal"
+                        placeholder="SMAW, FCAW, GMAW (MIG)"
+                        required
+                        class="input-field margin-bottom-input"
+                      ></textarea>
                   
 
                   <div class="modal-btn-flex">
                     <button id="btnUpdate" class="btn width-full">Update</button>
+                    <button id="btnClose" class="btn width-full btn-close">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 
+        - #MODAL CONFIRMED
+        -->
+        <div id="deleteModal" class="delete-modal hidden">
+          <div class="margin-top-content">
+            <div class="visual-card mg-left-3x">
+              <div class="container">
+                <div class="card-confirm">
+                  <h3>Yakin Hapus Data?</h3>
+                  <div class="modal-btn-flex">
+                    <button id="btnDelete" class="btn width-full">Delete</button>
                     <button id="btnClose" class="btn width-full btn-close">Close</button>
                   </div>
                 </div>
@@ -279,9 +220,7 @@
     <script src="./js/script.js"></script>
     <script src="js/include.js"></script>
     <script src="js/Controller/skill.js"></script>
-    <script src="js/Model/SoftSkill.js"></script>
-    <script src="js/Model/HardSkill.js"></script>
-    <script src="js/Model/LanguageSkill.js"></script>
+    <script src="js/Model/Skill.js"></script>
     <script src="./js/Model/User.js"></script>
     <script src="./js/Controller/logout.js"></script>
   </body>

@@ -9,55 +9,19 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  const softSkillManager = new SoftSkill();
-  const softSkillForm = document.getElementById("softSkillForm");
-
-  softSkillForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-
-    const softSkillData = {
-      softSkill: document.getElementById("softskill").value,
-    };
-
-    const result = softSkillManager.saveSoftSkill(softSkillData);
-
-    if (result.success) {
-      return (window.location.href = "../skill.html");
-    } else {
-      console.log("proses simpan data gagal");
-    }
-  });
-
-  //save hardskill
-  const hardSkillManager = new HardSkill();
-  const hardSkillForm = document.getElementById("hardSkillForm");
-
-  hardSkillForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-
-    const hardSkillData = {
-      hardSkill: document.getElementById("hardskill").value,
-    };
-
-    const result = hardSkillManager.saveHardSkill(hardSkillData);
-
-    if (result.success) {
-      return (window.location.href = "../skill.html");
-    } else {
-      console.log("proses simpan data gagal");
-    }
-  });
-
   //save languageskill
-  const languageSkillManager = new LanguageSkill();
-  const languageSkillForm = document.getElementById("languageSkillForm");
+  const skillManager = new Skill();
+  const skillForm = document.getElementById("skillForm");
 
-  languageSkillForm.addEventListener("submit", (e) => {
-    const languageSkillData = {
-      languageSkill: document.getElementById("languageskill").value,
+  skillForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const skillData = {
+      titleSkill: document.getElementById("title_skill").value,
+      skillValue: document.getElementById("skill_value").value,
     };
 
-    const result = languageSkillManager.saveLanguageSkill(languageSkillData);
+    const result = skillManager.saveSkill(skillData);
 
     if (result.success) {
       return (window.location.href = "../skill.html");
@@ -66,106 +30,48 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  //view Soft skill
-  const existingSoftSkills = softSkillManager.getSoftSkills();
-  const viewWrapperSoft = document.getElementById("viewWrapperSoft");
-  const viewWrapperSoftEmpty = document.getElementById("viewWrapperSoftEmpty");
-
-  function allDisplaySoftSkill() {
-    if (!existingSoftSkills || !existingSoftSkills.softSkill) {
-      viewWrapperSoft.className = "hidden";
-      // viewWrapperSoftEmpty.className = "";
-      return;
-    } else {
-      viewWrapperSoftEmpty.className = "hidden";
-      const itemSoftSkill = document.createElement("div");
-      itemSoftSkill.className = "container";
-      itemSoftSkill.innerHTML = `
-            <div class="card-content visual-card">
-              <div class="left-side-card margin-bottom-letter-2x">
-                <h2 class="title-large">${existingSoftSkills.softSkill}</h2>
-              </div>
-              <div class="btn-action">
-                <a href="#" class="action-link">
-                  <span class="material-symbols-outlined">delete</span>
-                </a>
-              </div>
-          </div>
-          
-        `;
-      viewWrapperSoft.appendChild(itemSoftSkill);
-    }
-  }
-  allDisplaySoftSkill();
-
-  //view Hard skill
-  const existingHardSkills = hardSkillManager.getHardSkills();
-  const viewWrapperHard = document.getElementById("viewWrapperHard");
-  const viewWrapperHardEmpty = document.getElementById("viewWrapperHardEmpty");
-
-  function allDisplayHardSkill() {
-    if (!existingHardSkills || !existingHardSkills.hardSkill) {
-      viewWrapperHard.className = "hidden";
-      // viewWrapperHardEmpty.className = "";
-    } else {
-      viewWrapperHardEmpty.className = "hidden";
-      const itemHardSkill = document.createElement("div");
-      itemHardSkill.className = "container";
-      itemHardSkill.innerHTML = `
-            <div class="card-content visual-card">
-              <div class="left-side-card margin-bottom-letter-2x">
-                <h2 class="title-large">${existingHardSkills.hardSkill}</h2>
-              </div>
-              <div class="btn-action">
-                <a href="#" class="action-link">
-                  <span class="material-symbols-outlined">delete</span>
-                </a>
-              </div>
-          </div>
-        `;
-      viewWrapperHard.appendChild(itemHardSkill);
-    }
-  }
-  allDisplayHardSkill();
-
-  // view Language Skill
-  const existingLanguageSkills = languageSkillManager.getLanguageSkills();
-  const viewWrapperLanguage = document.getElementById("viewWrapperLanguage");
-  const viewWrapperLanguageEmpty = document.getElementById(
-    "viewWrapperLanguageEmpty"
+  // view Skill
+  const existingskills = skillManager.getSkills();
+  const viewWrapperSkill = document.getElementById("viewWrapperSkill");
+  const viewWrapperSkillEmpty = document.getElementById(
+    "viewWrapperSkillEmpty"
   );
 
-  function allDisplayLanguageSkill(languageskills = existingLanguageSkills) {
-    viewWrapperLanguage.innerHTML = "";
-    if (languageskills.length === 0) {
-      viewWrapperLanguage.className = "hidden";
+  function allDisplaySkill(skills = existingskills) {
+    viewWrapperSkill.innerHTML = "";
+    if (skills.length === 0) {
+      viewWrapperSkill.className = "hidden";
     } else {
-      viewWrapperLanguageEmpty.className = "hidden";
-      languageskills.forEach((languageskill) => {
-        const itemLanguageSkill = document.createElement("div");
-        itemLanguageSkill.className = "container";
-        itemLanguageSkill.innerHTML = `
+      viewWrapperSkillEmpty.className = "hidden";
+      skills.forEach((skill) => {
+        const itemskill = document.createElement("div");
+        itemskill.className = "container";
+        itemskill.innerHTML = `
             <div class="card-content visual-card">
               <div class="left-side-card margin-bottom-letter-2x">
-                <h2 class="title-large">${languageskill.languageSkill}</h2>
+                <h2 class="title-medium">${skill.titleSkill}</h2>
               </div>
+              <div class="left-side-card margin-bottom-letter-2x">
+                <h2 class="title-small">${skill.skillValue}</h2>
+              </div>
+              
               <div class="btn-action">
-                <button href="#" class="action-link btn-edit" data-id=${languageskill.id}>
+                <button href="#" class="action-link btn-edit" data-id=${skill.id}>
                   <span class="material-symbols-outlined">edit</span>
                 </button>
-                <a href="#" class="action-link">
+                <button href="#" class="action-link btn-delete" data-id=${skill.id}>
                   <span class="material-symbols-outlined">delete</span>
-                </a>
+                </button>
               </div>
           </div>
         `;
-        viewWrapperLanguage.appendChild(itemLanguageSkill);
+        viewWrapperSkill.appendChild(itemskill);
       });
     }
   }
-  allDisplayLanguageSkill();
+  allDisplaySkill();
 
-  //Edit Language Skill
+  //---------------------------EDIT SKILL--------------------------------
 
   // 1. open & close Modal
   function openModal() {
@@ -178,7 +84,27 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelector("article").classList.remove("blur");
   }
 
+  function openDeleteModal() {
+    document.getElementById("deleteModal").classList.remove("hidden");
+    document.querySelector("article").classList.add("blur");
+  }
+
+  function closeDeleteModal() {
+    document.getElementById("deleteModal").classList.add("hidden");
+    document.querySelector("article").classList.remove("blur");
+  }
+
   // 2. Close Modal
+  document.addEventListener("click", function (e) {
+    if (e.target.classList.contains("btn-close")) {
+      closeModal();
+      closeDeleteModal();
+    }
+
+    if (e.target.id === "editModal") {
+      closeModal();
+    }
+  });
 
   document.addEventListener("click", function (e) {
     // 3. check btn-edit
@@ -190,8 +116,8 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("id yang diklik: ", id);
 
     // 5. find id in model
-    const languageSkill = languageSkillManager.getLanguageSkills();
-    const data = languageSkill.find((item) => item.id == id);
+    const skill = skillManager.getSkills();
+    const data = skill.find((item) => item.id == id);
 
     // 6. matches data id
     if (!data) {
@@ -202,28 +128,66 @@ document.addEventListener("DOMContentLoaded", () => {
     // 7. open & view in modal
     openModal();
 
-    document.getElementById("languageskillModal").value = data.languageSkill;
+    document.getElementById("title_skillModal").value = data.titleSkill;
+    document.getElementById("skill_valueModal").value = data.skillValue;
 
     // 8. set Editing ID
-    localStorage.setItem("editingLanguageSkillId", data.id);
+    localStorage.setItem("editingSkillId", data.id);
   });
 
   // 9. Update Data
   document.getElementById("btnUpdate").addEventListener("click", function () {
-    const languageSkillModel = new LanguageSkill();
+    const skillModel = new Skill();
 
-    const id = localStorage.getItem("editingLanguageSkillId");
+    const id = localStorage.getItem("editingSkillId");
 
     const newData = {
       id: id,
-      languageSkill: document.getElementById("languageskillModal").value,
+      titleSkill: document.getElementById("title_skillModal").value,
+      skillValue: document.getElementById("skill_valueModal").value,
     };
 
-    languageSkillModel.updateLanguageSkill(id, newData);
+    skillModel.updateSkill(id, newData);
     closeModal();
-    localStorage.removeItem("editingLanguageSkillId");
+    localStorage.removeItem("editingSkillId");
 
-    const languageskill = languageSkillModel.getLanguageSkills();
-    allDisplayLanguageSkill(languageskill);
+    const skill = skillModel.getSkills();
+    allDisplaySkill(skill);
   });
+
+  // -------------------------DELETE SKILL---------------------------------
+  let idDelete = null;
+  document.addEventListener("click", function (e) {
+    const btn = e.target.closest(".btn-delete");
+    if (!btn) return;
+    console.log(btn);
+
+    idDelete = btn.dataset.id;
+
+    openDeleteModal();
+  });
+
+  const btnConfirm = document.getElementById("btnDelete");
+  if (btnConfirm) {
+    btnConfirm.addEventListener("click", function () {
+      if (idDelete) {
+        const result = skillManager.deleteSkill(idDelete);
+        if (result.success) {
+          alert(result.message || "Berhasil menghapus data!");
+
+          const skills = skillManager.getSkills();
+          allDisplaySkill(skills);
+
+          if (skills.length === 0) {
+            localStorage.removeItem("skills");
+          }
+
+          closeDeleteModal();
+          idDelete = null;
+        } else {
+          alert(result.message || "Gagal menghapus data!");
+        }
+      }
+    });
+  }
 });

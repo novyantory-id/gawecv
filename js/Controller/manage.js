@@ -268,72 +268,27 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   displayAllExperiences();
 
-  // view Soft Skill
-  const softSkillManager = new SoftSkill();
-  const existingSoftSkills = softSkillManager.getSoftSkills();
-  const viewWrapperSoftSkill = document.getElementById("softSkillList");
-  const viewWrapperSoftSkillEmpty =
-    document.getElementById("softSkillListEmpty");
-
-  function allDisplaySoftSkill() {
-    if (!existingSoftSkills || !existingSoftSkills.softSkill) {
-      viewWrapperSoftSkill.className = "hidden";
-    } else {
-      viewWrapperSoftSkillEmpty.className = "hidden";
-      const itemSoftSkill = document.createElement("div");
-      itemSoftSkill.className = "softSkillList";
-      itemSoftSkill.innerHTML = `
-          <span class="body-medium card-text">${existingSoftSkills.softSkill}</span>
-        `;
-      viewWrapperSoftSkill.appendChild(itemSoftSkill);
-    }
-  }
-  allDisplaySoftSkill();
-
-  // view Hard Skill
-  const hardSkillManager = new HardSkill();
-  const existingHardSkills = hardSkillManager.getHardSkills();
-  const viewWrapperHardSkill = document.getElementById("hardSkillList");
-  const viewWrapperHardSkillEmpty =
-    document.getElementById("hardSkillListEmpty");
-
-  function allDisplayHardSkill() {
-    if (!existingHardSkills || !existingHardSkills.hardSkill) {
-      viewWrapperHardSkill.className = "hidden";
-    } else {
-      viewWrapperHardSkillEmpty.className = "hidden";
-      const itemHardSkill = document.createElement("div");
-      itemHardSkill.className = "hardSkillList";
-      itemHardSkill.innerHTML = `
-          <span class="body-medium card-text">${existingHardSkills.hardSkill}</span>
-        `;
-      viewWrapperHardSkill.appendChild(itemHardSkill);
-    }
-  }
-  allDisplayHardSkill();
-
   // view Language Skill
-  const languageSkillManager = new LanguageSkill();
-  const existingLanguageSkills = languageSkillManager.getLanguageSkills();
-  const viewWrapperLanguageSkill = document.getElementById("languageSkillList");
-  const viewWrapperLanguageSkillEmpty = document.getElementById(
-    "languageSkillListEmpty"
-  );
+  const skillManager = new Skill();
+  const existingSkills = skillManager.getSkills();
+  const viewWrapperSkill = document.getElementById("skillList");
+  const viewWrapperSkillEmpty = document.getElementById("skillListEmpty");
 
-  function allDisplayLanguageSkill() {
-    if (existingLanguageSkills.length === 0) {
-      viewWrapperLanguageSkill.className = "hidden";
+  function allDisplaySkill() {
+    if (existingSkills.length === 0) {
+      viewWrapperSkill.className = "hidden";
     } else {
-      existingLanguageSkills.forEach((languageskill) => {
-        viewWrapperLanguageSkillEmpty.className = "hidden";
-        const itemLanguageSkill = document.createElement("div");
-        itemLanguageSkill.className = "languageSkillList";
-        itemLanguageSkill.innerHTML = `
-          <span class="body-medium card-text">${languageskill.languageSkill}</span>
+      existingSkills.forEach((Skill) => {
+        viewWrapperSkillEmpty.className = "hidden";
+        const itemSkill = document.createElement("div");
+        itemSkill.className = "skillList";
+        itemSkill.innerHTML = `
+        <span class="body-large">${Skill.titleSkill}</span>
+          <span class="body-medium card-text">${Skill.skillValue}</span>
         `;
-        viewWrapperLanguageSkill.appendChild(itemLanguageSkill);
+        viewWrapperSkill.appendChild(itemSkill);
       });
     }
   }
-  allDisplayLanguageSkill();
+  allDisplaySkill();
 });

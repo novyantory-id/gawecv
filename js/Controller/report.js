@@ -38,6 +38,7 @@ function directReportTab() {
   const organizationManager = new Organization();
   const internshipManager = new Internship();
   const courseManager = new Course();
+  const skillManager = new Skill();
 
   const email = userManager.getLogins();
   const user = userManager.getUserByEmail(email);
@@ -46,6 +47,7 @@ function directReportTab() {
   const organizations = organizationManager.getOrganizations();
   const internships = internshipManager.getInternships();
   const courses = courseManager.getCourses();
+  const skills = skillManager.getSkills();
 
   // ----------------------SET STYLE-------------------------------
   const pageWidth = doc.internal.pageSize.getWidth();
@@ -56,11 +58,16 @@ function directReportTab() {
   const marginRight = 195;
 
   // ----------------------FULL NAME-------------------------------
+  const fullName = user.nama;
+  const upperCaseName = fullName.toUpperCase();
+
   doc.setFont("times-new-roman-bold", "bold");
   console.log("Font saat ini sebelum set: ", doc.getFont());
   console.log("Font saat ini setelah set: ", doc.getFont());
   doc.setFontSize(24);
-  doc.text(user.nama || "YOUR FULLNAME", centerText, y, { align: "center" });
+  doc.text(upperCaseName || "YOUR FULLNAME", centerText, y, {
+    align: "center",
+  });
 
   // --------------------ADDRESS, lINK------------------------------
   y += 10;
@@ -114,12 +121,24 @@ function directReportTab() {
   y += height + 8;
 
   // -------------------------EDUCATION------------------------------------
-  doc.setFont("times-new-roman-bold", "bold");
-  doc.setFontSize(17);
-  doc.text("EDUCATION", marginLeft, y);
+  if (experiences.length === 0) {
+  } else if (experiences.length === 1) {
+    y += 2;
+    doc.setFont("times-new-roman-bold", "bold");
+    doc.setFontSize(17);
+    doc.text("EDUCATION", marginLeft, y);
 
-  y += 2;
-  doc.line(marginLeft, y, marginRight, y);
+    y += 2;
+    doc.line(marginLeft, y, marginRight, y);
+  } else {
+    y += 2;
+    doc.setFont("times-new-roman-bold", "bold");
+    doc.setFontSize(17);
+    doc.text("EDUCATIONS", marginLeft, y);
+
+    y += 2;
+    doc.line(marginLeft, y, marginRight, y);
+  }
 
   if (educations.length === 0) {
   } else {
@@ -143,25 +162,25 @@ function directReportTab() {
       doc.setFont("times", "normal");
       doc.setFontSize(12);
       doc.text(education.lamapendidikan, marginRight, y, { align: "right" });
-      y += 5;
+      y += 8;
     });
   }
 
   // -------------------------EXPERIENCES------------------------------------
   if (experiences.length === 0) {
   } else if (experiences.length === 1) {
-    y += 8;
+    y += 5;
     doc.setFont("times-new-roman-bold", "bold");
     doc.setFontSize(17);
-    doc.text("EXPERIENCE", marginLeft, y);
+    doc.text("WORK EXPERIENCE", marginLeft, y);
 
     y += 2;
     doc.line(marginLeft, y, marginRight, y);
   } else {
-    y += 8;
+    y += 5;
     doc.setFont("times-new-roman-bold", "bold");
     doc.setFontSize(17);
-    doc.text("EXPERIENCES", marginLeft, y);
+    doc.text("WORK EXPERIENCES", marginLeft, y);
 
     y += 2;
     doc.line(marginLeft, y, marginRight, y);
@@ -205,13 +224,14 @@ function directReportTab() {
         }).h;
         y += taskHeight + 1;
       });
+      y += 3;
     });
   }
 
   // -------------------------ORGANIZATIONS------------------------------------
   if (organizations.length === 0) {
   } else if (organizations.length === 1) {
-    y += 8;
+    y += 5;
     doc.setFont("times-new-roman-bold", "bold");
     doc.setFontSize(17);
     doc.text("ORGANIZATION", marginLeft, y);
@@ -219,7 +239,7 @@ function directReportTab() {
     y += 2;
     doc.line(marginLeft, y, marginRight, y);
   } else {
-    y += 8;
+    y += 5;
     doc.setFont("times-new-roman-bold", "bold");
     doc.setFontSize(17);
     doc.text("ORGANIZATIONS", marginLeft, y);
@@ -267,13 +287,14 @@ function directReportTab() {
         }).h;
         y += taskHeight + 1;
       });
+      y += 3;
     });
   }
 
   // -------------------------INTERNSHIPS------------------------------------
   if (internships.length === 0) {
   } else if (internships.length === 1) {
-    y += 8;
+    y += 5;
     doc.setFont("times-new-roman-bold", "bold");
     doc.setFontSize(17);
     doc.text("INTERNSHIP", marginLeft, y);
@@ -281,7 +302,7 @@ function directReportTab() {
     y += 2;
     doc.line(marginLeft, y, marginRight, y);
   } else {
-    y += 8;
+    y += 5;
     doc.setFont("times-new-roman-bold", "bold");
     doc.setFontSize(17);
     doc.text("INTERNSHIPS", marginLeft, y);
@@ -329,13 +350,14 @@ function directReportTab() {
         }).h;
         y += taskHeight + 1;
       });
+      y += 3;
     });
   }
 
   // -------------------------COURSES------------------------------------
   if (courses.length === 0) {
   } else if (courses.length === 1) {
-    y += 8;
+    y += 5;
     doc.setFont("times-new-roman-bold", "bold");
     doc.setFontSize(17);
     doc.text("COURSE", marginLeft, y);
@@ -343,7 +365,7 @@ function directReportTab() {
     y += 2;
     doc.line(marginLeft, y, marginRight, y);
   } else {
-    y += 8;
+    y += 5;
     doc.setFont("times-new-roman-bold", "bold");
     doc.setFontSize(17);
     doc.text("COURSES", marginLeft, y);
@@ -377,6 +399,46 @@ function directReportTab() {
         align: "right",
       });
       y += 8;
+    });
+  }
+
+  // SKILL
+  if (skills.length === 0) {
+  } else if (skills.length === 1) {
+    y += 5;
+    doc.setFont("times-new-roman-bold", "bold");
+    doc.setFontSize(17);
+    doc.text("SKILL", marginLeft, y);
+
+    y += 2;
+    doc.line(marginLeft, y, marginRight, y);
+  } else {
+    y += 5;
+    doc.setFont("times-new-roman-bold", "bold");
+    doc.setFontSize(17);
+    doc.text("SKILLS", marginLeft, y);
+
+    y += 2;
+    doc.line(marginLeft, y, marginRight, y);
+  }
+
+  if (skills.length === 0) {
+  } else {
+    skills.forEach((skill) => {
+      y += 5;
+      doc.setFont("times-new-roman-bold", "bold");
+      doc.setFontSize(12);
+      const titleSkill = skill.titleSkill + ": ";
+      const titleWidth = doc.getTextWidth(titleSkill);
+
+      doc.text(titleSkill, marginLeft, y);
+
+      const value = skill.skillValue;
+
+      doc.setFont("times", "normal");
+      doc.setFontSize(12);
+      const valueX = marginLeft + titleWidth + 2;
+      doc.text(value, valueX, y, { align: "left" });
     });
   }
 

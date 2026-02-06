@@ -629,7 +629,7 @@ article {
 
 .btn-download {
   position: absolute;
-  top: -4px;
+  top: -8px;
   right: 5px;
 }
 
@@ -838,7 +838,8 @@ article {
 \*-----------------------------------*/
 
 .experience-tab .list,
-.education-tab .list {
+.education-tab .list,
+.skill-tab .resume-card {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 24px;

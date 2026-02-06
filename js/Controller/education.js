@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   displayAllEducations();
 
-  //EDIT EDUCATION
+  //-------------------------Edit Education--------------------------
   function openModal() {
     document.getElementById("editModal").classList.remove("hidden");
     document.querySelector("article").classList.add("blur");
